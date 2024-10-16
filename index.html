@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Crypto Sense</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./element_style.css" type="text/css">
+<link rel="stylesheet" href="./crypto_sense_style.css">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+  <div class="col">
+   <div class="rainbow-text"><p><b>Normal Sense</b></p>
+    <form id="encryptForm">
+  <input type="text" name="key" placeholder="PassCode">
+  <br>
+  <textarea name="message" id="encrypted" cols="30" rows="10" placeholder="Message to encrypt"></textarea>
+  <br>
+  <textarea name="message" id="en-message" cols="30" rows="10" placeholder="Result"></textarea>
+  <br>
+      <input type="submit" value="Encrypt">
+</form></div>
+<div class="col">
+    <div class="rainbow-text"><p><b>Complex Sense<b></p><form id="decryptForm">
+  <input type="text" name="key" placeholder="PassCode">
+  <br>
+  <textarea name="encrypted" id="encrypted" cols="30" rows="10" placeholder="Encrypted message"></textarea>
+  <br>
+  <textarea name="message" id="de-message" cols="30" rows="10" placeholder="Result"></textarea>
+  <br>
+      <input type="submit" value="Decrypt">
+</form>
+</div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js'></script><script  src="./crypto_sense.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+body {
+	height: 100%;
+	font-family: Georgia, Bangla;
+	background-color:black;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10px;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+  @font-face {
+    font-family: "Bangla";
+    src: url("../../media/font/bangla.ttf");
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.rainbow-text{
+    font-size: 18px;
+    text-align: center;
+} 
+.rainbow-text .char { 
+   color: hsl(
+    calc(360deg * var(--char-percent)
+), 
+65%,
+90%
+);}
+.rainbow-text.animated .char {
+  animation: rainbow-colors 2s linear infinite;
+  animation-delay: calc(-2s * var(--char-percent));
+}
+@keyframes rainbow-colors {
+  0% { color: hsl(0turn, 90%, 65%); }
+  25% { color: hsl(.25turn, 90%, 65%); }
+  50% { color: hsl(.5turn, 90%, 65%); }
+  75% { color: hsl(.75turn, 90%, 65%); }
+  100% { color: hsl(1turn, 90%, 65%); }
+}
+.splitting .char {
+    --char-percent: calc(var(--char-index) / var(--char-total));
+    --char-offset: calc(var(--char-index) - var(--char-center));
+    --distance: calc( (var(--char-offset) * var(--char-offset)) / var(--char-center) );
+    --distance-sine: calc(var(--char-offset) / var(--char-center));
+    --distance-percent: calc((var(--distance) / var(--char-center)));
+}
+.splitting .char {
+    position: relative;
+}
+.rainbow-text p{
+  background-image: linear-gradient(-90deg, #ff0000, rgb(166,246,86), rgb(85,246,246), rgb(166, 85, 246), rgb(246,85,85));
+  background-size: 200%;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  animation: animate 2.5s linear infinite;
+  font-size: 20px;
+  padding: 5px;
+  animation-direction: reverse;
+}
+@keyframes animate{
+  0%{
+    background-position: 0%;
+  }
+  100%{
+    background-position:  200%;
+  }
+}
+
+
+.glow {
+  text-align: center;
+  display: block;
+}
+.glow span {
+  border-radius: 20px;
+  color: #fff;
+  box-shadow: 0 0 2px #fff, 0 0 10px #fff, 0 0 20px #0ba9ca, 0 0 30px #0ba9ca,
+    0 0 40px #0ba9ca, 0 0 50px #0ba9ca;
+  -webkit-animation: blink 0.7s infinite alternate;
+  animation: blink 0.7s infinite alternate;
+}
+.glow .text {
+  font-size: 10px;
+  padding: 1.5rem 5rem;
+  font-weight: 350;
+  display:grid;
+  justify-content:center;
+}
+.text > a {
+  color: #fff;
+  text-decoration: none;
+}
+@-webkit-keyframes blink {
+  100% {
+    box-shadow: 0 0 3px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #0ba9ca,
+      0 0 70px #0ba9ca, 0 0 80px #0ba9ca;
+  }
+}
+@keyframes blink {
+  100% {
+    box-shadow: 0 0 3px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #0ba9ca,
+      0 0 70px #0ba9ca, 0 0 80px #0ba9ca;
+  }
+}
